@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EMAIL VALIDATION</title>
+    </head>
+    <body>
+        <form name="Form1" onsubmit="return v_Form();"> 
+        Name: <input type="name" name="name" placeholder="enter your name" value="" required>
+        Email: <input type="text" name="email" placeholder="enter your mail" value=""  required>
+        <input type="submit" value="submit">
+        </form> 
+	<script>    
+	function v_Form()
+	{
+    		var y = document.forms[0]["name"].value;
+   		var x = document.forms[0]["email"].value;
+    		var atpos=x.indexOf("@");
+    		var dotpos=x.lastIndexOf(".");
+     	 if(atpos<1 ||dotpos<atpos+2 || dotpos+2>=x.length)
+     	{
+        	alert("not valid email address");
+        	return false;
+     	}else{
+        	alert ("its valid email")
+     	}
+	}
+	</script>
+    </body>
+</html>
